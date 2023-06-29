@@ -1,4 +1,4 @@
-local object = require("object")
+local object = require("example.object")
 
 array = {}
 
