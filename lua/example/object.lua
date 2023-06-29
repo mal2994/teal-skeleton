@@ -13,23 +13,24 @@ function object.result(data)
 end
 
 function object.eq(a, b)
-   for i, _ in pairs(a) do
-      if type(a[i]) == "table" and type(b[i]) == "table" then
+
+   if not (type(a) == "table") and not (type(b) == "table") then
+      return a == b
+   end
+
+   if type(a) == "table" and type(b) == "table" then
+      for i, _ in pairs(a) do
          if object.eq(a[i], b[i]) ~= true then
             return false
          end
-      elseif a[i] ~= b[i] then
-         return false
       end
    end
 
-   for i, _ in pairs(b) do
-      if type(a[i]) == "table" and type(b[i]) == "table" then
+   if type(a) == "table" and type(b) == "table" then
+      for i, _ in pairs(b) do
          if object.eq(a[i], b[i]) ~= true then
             return false
          end
-      elseif a[i] ~= b[i] then
-         return false
       end
    end
 
