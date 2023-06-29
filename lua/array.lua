@@ -1,4 +1,4 @@
-local object = require("lua.example.object")
+local object = require("object")
 
 array = {}
 

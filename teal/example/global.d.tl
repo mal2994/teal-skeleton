@@ -1,3 +1,0 @@
---require("include/object")
---require("src/array")
---require("src/tests")

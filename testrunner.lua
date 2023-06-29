@@ -31,8 +31,8 @@ end
 -- 		run()
 -- 	end
 -- end
-
-require('lua/example/object')
-require('lua/example/array')
-require('lua/example/tests')
+package.path = package.path .. ";./lua/?.lua"
+require('object')
+require('array')
+require('tests')
 
