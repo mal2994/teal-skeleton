@@ -1,7 +1,5 @@
 
 
-
-
 test("an example teal project", function(desc, it)
    desc("my testing", function()
 
@@ -17,16 +15,14 @@ test("an example teal project", function(desc, it)
          end
 
          function evens.div2(a)
-            return a:
-            map(function(thing) return thing / 2 end)
+            return a:map(function(thing) return thing / 2 end)
          end
 
          function evens.fromarray(a)
             local filtered = 
             a:filter(function(thing) return thing % 2 == 0 end)
 
-            return evens.
-            new(filtered)
+            return evens.new(filtered)
          end
 
          return evens.

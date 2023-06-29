@@ -12,29 +12,28 @@ function object.result(data: object): table
 	return setmetatable(data, {}) as table
 end
 
-local table_eq: function(table, table): boolean
-
-table_eq = function(a: table, b: table): boolean
+function object.eq(a: table, b: table): boolean
 	for i, _ in pairs(a) do 
 		if type(a[i]) == "table" and type(b[i]) == "table" then
-			if table_eq(a[i] as table, b[i] as table) ~= true then
-				return false 
+			if object.eq(a[i] as table, b[i] as table) ~= true then
+				return false
 			end
-		else
-			return a == b 
+		elseif a[i] ~= b[i] then
+			return false
 		end
 	end
-	return true
-end
 
-function object.eq(a: any, b: any): boolean
-	if  a is table 
-	and b is table then
-		return table_eq(a as table, b as table) 
-		   and table_eq(b as table, a as table)
-	else
-		return a == b
+	for i, _ in pairs(b) do 
+		if type(a[i]) == "table" and type(b[i]) == "table" then
+			if object.eq(a[i] as table, b[i] as table) ~= true then
+				return false
+			end
+		elseif a[i] ~= b[i] then
+			return false
+		end
 	end
+
+	return true
 end
 
 return object

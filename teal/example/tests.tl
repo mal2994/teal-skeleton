@@ -1,6 +1,4 @@
 global test: function(title: string, f: function)
---global desc: function(msg: string, f: function)
---global it: function(msg: string, f: function)
 
 test("an example teal project", function(desc: function, it: function)
 	desc("my testing", function(): boolean...
@@ -17,16 +15,14 @@ test("an example teal project", function(desc: function, it: function)
 			end
 
 			function evens.div2(a: evens): array
-				return a
-					:map(function(thing: integer): any return thing / 2 end)
+				return a:map(function(thing: integer): any return thing / 2 end)
 			end
 			
 			function evens.fromarray(a: array): evens
 			 	local filtered = 
 					a:filter(function(thing: integer): boolean return thing % 2 == 0 end) 
 	
-				return evens
-					.new(filtered)
+				return evens.new(filtered)
 			end
 
 			return evens

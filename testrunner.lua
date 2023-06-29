@@ -33,6 +33,7 @@ end
 -- end
 
 package.path = package.path .. ";./lua/?.lua"
+require('include.p8compat')
 require('example.object')
 require('example.array')
 require('example.tests')
