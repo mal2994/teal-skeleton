@@ -1,2 +1,2 @@
 # teal-skeleton
-like cyan init but with more bones (temp project)
+doing cyan init and then adding some directories after that. working good dude.
